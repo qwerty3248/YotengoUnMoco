@@ -32,7 +32,7 @@ int main (){
 		sleep(7);
 		cout<<"CUMPLEAÑOS FELIZ"<<endl;
 		sleep(7);
-		cout<<"MUCHAS FELICIDADESSSSS "+NOMBRE+"\n";
+		cout<<"MUCHAS FELICIDADESSSSS "+NOMBRE+" y "+NOMBRE2+"\n";
 		sleep(9); 
 		
 	
