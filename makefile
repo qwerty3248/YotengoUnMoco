@@ -1,18 +1,13 @@
 # Nombre del archivo ejecutable
-TARGET = mi_programa
+TARGET = mi_programa cumpleanos
 
 # Compilador C++
 CXX = g++
 
 # Opciones de compilación y enlace
-CXXFLAGS = -std=c++11 -Wall
-
-# Ruta a las bibliotecas de SFML y FLAC
-SFML_DIR = ./SFML-2.6.0
-FLAC_DIR = /usr/lib/x86_64-linux-gnu
-
-# Opciones de enlace (incluye las bibliotecas necesarias y especifica la ruta)
-LIBS = -L$(SFML_DIR)/lib -lsfml-audio -lsfml-system -Wl,-rpath,$(SFML_DIR)/lib -L$(FLAC_DIR) -lFLAC
+CXXFLAGS = -std=c++11 -Wall -I./SFML-2.6.0/include
+LDFLAGS = -L./SFML-2.6.0/lib -L/usr/lib/x86_64-linux-gnu
+LIBS = -lsfml-audio -lsfml-system -lFLAC
 
 # Directorio de archivos de origen
 SRC_DIR = .
@@ -24,11 +19,11 @@ SOURCES = $(wildcard $(SRC_DIR)/*.cpp)
 BUILD_DIR = build
 
 # Lista de archivos de objetos generados a partir de los archivos de origen
-OBJECTS = $(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
+OBJECTS = $(patsyndect $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SOURCES))
 
 # Regla para compilar el programa
 $(TARGET): $(OBJECTS)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS) $(LIBS)
 
 # Regla para compilar cada archivo de origen en un archivo de objeto
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp

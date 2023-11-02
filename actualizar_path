@@ -1,2 +1,8 @@
 export LD_LIBRARY_PATH=/home/jesus/Moco/YotengoUnMoco/SFML-2.6.0/lib:$LD_LIBRARY_PATH
+export CPLUS_INCLUDE_PATH=/home/jesus/Moco/YotengoUnMoco/SFML-2.6.0/include:$CPLUS_INCLUDE_PATH
+el primero es para el moco y el segundo para el cumpleaños 
+
+la manera de compilar cumpleaños abajo
+
+g++ -std=c++11 -Wall -o cumpleanos cumple.cpp -I./SFML-2.6.0/include -L./SFML-2.6.0/lib -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
